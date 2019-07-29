@@ -1,6 +1,7 @@
 <div class="spinner" *ngIf="spinner">
   <img class="loading" src="../../assets/loading.gif">
 </div>
+<button class="btn btn-primary" routerLink="/profile">Back</button>
 <div class="container">
   <div class="tweet_info">
     <h3>Tweet Information</h3>
@@ -17,7 +18,7 @@
         <li class="list-group-item">Location: {{tweetInfo?.user.location}}</li>
         <li class="list-group-item">Favourites: {{tweetInfo?.user.favourites_count}}</li>
         <li class="list-group-item">Favorited: {{tweetInfo?.favorited}}</li>
-       
+
       </ul>
       <div class="card-body">
         <p>{{tweetInfo?.text}}</p>
