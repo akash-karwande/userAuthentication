@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="login">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <h3>User Login</h3>
+        <hr>
+        <label>Email</label>
+        <input [(ngModel)]="email" placeholder="akash@gmail.com">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="password" placeholder="@njnrfrs">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <button class="btn btn-primary" type="submit" (click)="login()">Login</button>
+      </div>
+    </div>
+  </div>
+</div>

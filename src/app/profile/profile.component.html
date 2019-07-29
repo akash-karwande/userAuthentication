@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="tweets">
+    <h3>Your Twitter Feed</h3>
+    <div class="card" *ngFor="let tweet of tweets">
+        <div class="card-body" routerLink="/tweet/{{tweet.id}}">
+          <h5 class="card-title">{{tweet?.user.name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{tweet?.user.screen_name}}</h6>
+          <a class="card-link">followers: {{tweet?.user.followers_count}}</a>
+          <a class="card-link">{{tweet?.created_at}}</a>
+        </div>
+      </div>
+  </div>
+</div>

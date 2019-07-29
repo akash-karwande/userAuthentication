@@ -1,0 +1,28 @@
+<div class="spinner" *ngIf="spinner">
+  <img class="loading" src="../../assets/loading.gif">
+</div>
+<div class="container">
+  <div class="tweet_info">
+    <h3>Tweet Information</h3>
+    <div class="card">
+      <img class="card-img-top" *ngIf="tweetInfo?.user.profile_image_url" src="{{tweetInfo?.user.profile_image_url}}">
+      <div class="card-body">
+        <h5 class="card-title"><strong>{{tweetInfo?.user.name}}</strong></h5>
+        <p>{{tweetInfo?.user.screen_name}}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Tweet Date: {{tweetInfo?.user.created_at}}</li>
+        <li class="list-group-item">Followers: {{tweetInfo?.user.followers_count}}</li>
+        <li class="list-group-item">Total Friends: {{tweetInfo?.user.friends_count}}</li>
+        <li class="list-group-item">Location: {{tweetInfo?.user.location}}</li>
+        <li class="list-group-item">Favourites: {{tweetInfo?.user.favourites_count}}</li>
+        <li class="list-group-item">Favorited: {{tweetInfo?.favorited}}</li>
+       
+      </ul>
+      <div class="card-body">
+        <p>{{tweetInfo?.text}}</p>
+        <p>Description: {{tweetInfo?.user.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+.tweet_info {
+    width: 50%;
+    padding: 20px;
+    display: block;
+    position: absolute;
+    left: 25%;
+}
+
+.loading {
+    position: fixed;
+    top: 40%;
+    left: 45%;
+    z-index: 1000;
+    height: 40px;
+    width: 40px;
+}
+
+.spinner {
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+}

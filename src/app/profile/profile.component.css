@@ -1,0 +1,11 @@
+.tweets {
+    padding: 20px;
+}
+
+.card {
+    padding: 20px;
+    margin-bottom: 4px;
+}
+.card-body {
+    cursor: pointer;
+}
