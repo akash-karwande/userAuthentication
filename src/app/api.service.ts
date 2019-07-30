@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Tweet } from './models/tweet';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,11 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  public getToken(): string {
+    return localStorage.getItem('id_token');
+  }
+
+
 
   userLogin(data) {
     var url = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyD8W0pWlju6wOPr3ih_aio2gNiVKHd9F8g";
@@ -15,7 +21,6 @@ export class ApiService {
   }
 
   getTweets() {
-    var id_token = localStorage.getItem("id_token");
-    return this.http.get("https://angular-sample-twitter.firebaseio.com/tweets.json?auth=" +id_token);
+    return this.http.get<Tweet[]>("https://angular-sample-twitter.firebaseio.com/tweets.json");
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
+import { Tweet } from '../models/tweet'
 
 @Component({
   selector: 'app-tweet',
@@ -9,7 +10,7 @@ import { ApiService } from '../api.service';
 })
 export class TweetComponent implements OnInit {
 
-  id: string;
+  id: number;
   tweetInfo: any;
   spinner: boolean;
 
@@ -20,7 +21,7 @@ export class TweetComponent implements OnInit {
       this.id = params.id;
     });
 
-    this.apiService.getTweets().subscribe((response: any) => {
+    this.apiService.getTweets().subscribe((response: Tweet[]) => {
       response.forEach(tweet => {
         if (this.id == tweet.id) {
           this.tweetInfo = tweet;

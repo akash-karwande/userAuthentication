@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TweetComponent } from './tweet/tweet.component';
 import { ApiService } from './api.service';
+import { TokenInterceptor } from './intercepter/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,12 @@ import { ApiService } from './api.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ApiService,  { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
+  providers: [ApiService, { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

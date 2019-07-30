@@ -1,5 +1,6 @@
 import { Component, OnInit, isDevMode } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Tweet } from '../models/tweet'
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +13,7 @@ export class ProfileComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getTweets().subscribe((response:any) => {
+    this.apiService.getTweets().subscribe((response: Tweet[]) => {
       this.tweets = response;
      if (isDevMode) console.log(this.tweets);
     });
